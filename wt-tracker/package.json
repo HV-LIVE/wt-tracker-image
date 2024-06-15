@@ -1,0 +1,64 @@
+{
+  "name": "wt-tracker",
+  "description": "High performance WebTorrent tracker",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "Novage",
+  "homepage": "https://github.com/Novage/wt-tracker",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "bin": {
+    "wt-tracker": "./bin/wt-tracker"
+  },
+  "keywords": [
+    "p2p",
+    "peer-to-peer",
+    "webrtc",
+    "torrent",
+    "bittorrent",
+    "bittorrent-tracker",
+    "webtorrent",
+    "tracker",
+    "websockets"
+  ],
+  "scripts": {
+    "start": "node ./dist/run-uws-tracker.js",
+    "build": "npm run lint && npm run clean && npm run compile",
+    "compile": "tsc",
+    "lint": "eslint --ext .ts lib",
+    "clean": "rimraf dist",
+    "watch": "tsc --watch",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:compile": "tsc --project tsconfig.test.json",
+    "test:clean": "rimraf test_dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Novage/wt-tracker.git"
+  },
+  "dependencies": {
+    "debug": "^4.3.4",
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v20.42.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.11",
+    "@types/debug": "^4.1.12",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.19",
+    "@types/ws": "^8.5.10",
+    "@vitest/coverage-v8": "^1.3.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "ts-mockito": "^2.6.1",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^7.0.2",
+    "vitest": "^1.3.0",
+    "ws": "^8.16.0"
+  }
+}
